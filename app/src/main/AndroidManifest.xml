@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.bawp.babyneeds">
 
     <application
@@ -8,8 +9,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Benefit"></activity>
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".MyAlarmActivity"></activity>
+        <activity android:name=".Benefit" />
         <activity android:name=".Diat" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ListActivity" />
@@ -23,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".Alarm_Receiver"/>
+        <service android:name=".RingtonePlayingService"
+            android:enabled="true"/>
     </application>
 
 </manifest>

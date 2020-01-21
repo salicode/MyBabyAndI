@@ -4,33 +4,35 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ExpandableListDataPump {
-    public static HashMap<String, List<String>> getData() {
-        HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
+class ExpandableListDataPump {
+    static HashMap<String, List<String>> getData() {
+        HashMap<String, List<String>> expandableListDetail = new HashMap<>();
 
-        List<String> BreastFeeding = new ArrayList<String>();
+        List<String> BreastFeeding = new ArrayList<>();
         BreastFeeding.add("LEFT");
         BreastFeeding.add("RIGHT");
+        BreastFeeding.add("Stop");
+        BreastFeeding.add("Reset");
 
 
-        List<String> Growth = new ArrayList<String>();
+        List<String> Growth = new ArrayList<>();
         Growth.add("Growth");
 
 
-        List<String> Diet = new ArrayList<String>();
+        List<String> Diet = new ArrayList<>();
         Diet.add("Diet");
 
-        List<String> Benefits = new ArrayList<String>();
+        List<String> Benefits = new ArrayList<>();
         Benefits.add(" Benefits");
 
-        List<String> Pumping = new ArrayList<String>();
+        List<String> Pumping = new ArrayList<>();
         Pumping.add(" Pumping");
 
-        List<String> Reminder = new ArrayList<String>();
+        List<String> Reminder = new ArrayList<>();
         Reminder.add("Reminder");
 
 
-        List<String> Logs = new ArrayList<String>();
+        List<String> Logs = new ArrayList<>();
         Logs.add("Logs");
 
 

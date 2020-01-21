@@ -1,8 +1,11 @@
 package com.bawp.babyneeds;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
@@ -42,6 +45,7 @@ public class BabyFeeder extends AppCompatActivity {
     DatePickerDialog picker;
 
 
+
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
@@ -53,8 +57,10 @@ public class BabyFeeder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baby_feeder);
 
+
        // babyItem = findViewById(R.id.babyItem);
         //itemQuantity =findViewById(R.id.itemQuantity);
+
 
 
 
@@ -126,16 +132,15 @@ public class BabyFeeder extends AppCompatActivity {
                 Timer();
                 if (groupPosition == 0 && childPosition == 0 || childPosition == 1) {
 
-
+                             MyStart();
+                        //   MyStop();
                         //createPopupDialog();
                         //Intent intent = new Intent(BabyFeeder.this,Diat.class);
                        // startActivity(intent);
                         //  onClickStart();
                        // createPopupDialog();
-                        startRun = true;
+                        //startRun = true;
                     } else if (groupPosition == 1 && childPosition == 0) {
-                    //startRun = false;
-                         // createPopupDialog();
                     Intent intent = new Intent(BabyFeeder.this,Diat.class);
                      startActivity(intent);
                 } else if (groupPosition == 2 && childPosition == 0 ){
@@ -147,6 +152,9 @@ public class BabyFeeder extends AppCompatActivity {
                     startActivity(intent);
                 } else if (groupPosition == 5 && childPosition == 0 ){
                     Intent intent = new Intent(BabyFeeder.this,Benefit.class);
+                    startActivity(intent);
+                } else if (groupPosition == 6 && childPosition == 0){
+                    Intent intent = new Intent(BabyFeeder.this,MyAlarmActivity.class);
                     startActivity(intent);
                 }
 
@@ -194,21 +202,21 @@ public class BabyFeeder extends AppCompatActivity {
         saveInstanceState.putBoolean("startRun", startRun);
     }
 
-    public void onClickStart(View view) {
+    public void MyStart() {
         startRun = true;
     }
 
-    public void onClickStop(View view) {
+    public void MyStop() {
         startRun = false;
     }
 
-    public void onClickReset(View view) {
+    public void MyResest() {
         startRun = false;
         seconds = 0;
     }
 
     private void Timer() {
-        final TextView timeView = (TextView) findViewById(R.id.timeview);
+       // final TextView timeView = findViewById(R.id.timeview);
         final Handler handler = new Handler();
         handler.post(new Runnable() {
             @Override
@@ -217,9 +225,9 @@ public class BabyFeeder extends AppCompatActivity {
                 int minutes = (seconds % 3600) / 60;
                 int secs = seconds % 60;
 
-                String time = String.format(  "LEFT:  %d:%02d:%02d", hours, minutes, secs);
+                @SuppressLint("DefaultLocale") String time = String.format(  "LEFT:  %d:%02d:%02d", hours, minutes, secs);
 
-                timeView.setText(time);
+               // timeView.setText(time);
 
                 if (startRun) {
                     seconds++;
