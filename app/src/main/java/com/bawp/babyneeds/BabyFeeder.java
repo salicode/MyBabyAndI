@@ -1,11 +1,11 @@
 package com.bawp.babyneeds;
 
 import android.annotation.SuppressLint;
-import android.app.AlarmManager;
+
 import android.app.DatePickerDialog;
-import android.app.PendingIntent;
+
 import android.app.TimePickerDialog;
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
@@ -130,9 +130,18 @@ public class BabyFeeder extends AppCompatActivity {
                 // ).show();
 
                 Timer();
-                if (groupPosition == 0 && childPosition == 0 || childPosition == 1) {
+                if (groupPosition == 0) {
+                    if (childPosition == 0 || childPosition == 1) {
+                       // onMyStart();
+                        MyStart();
+                    } else if (childPosition == 2) {
+                        MyStop();
+                    } else if (childPosition == 3) {
+                        MyResest();
+                    }
 
-                             MyStart();
+
+                    //
                         //   MyStop();
                         //createPopupDialog();
                         //Intent intent = new Intent(BabyFeeder.this,Diat.class);
@@ -216,7 +225,7 @@ public class BabyFeeder extends AppCompatActivity {
     }
 
     private void Timer() {
-       // final TextView timeView = findViewById(R.id.timeview);
+        final TextView timeView = findViewById(R.id.timeview);
         final Handler handler = new Handler();
         handler.post(new Runnable() {
             @Override
@@ -227,7 +236,7 @@ public class BabyFeeder extends AppCompatActivity {
 
                 @SuppressLint("DefaultLocale") String time = String.format(  "LEFT:  %d:%02d:%02d", hours, minutes, secs);
 
-               // timeView.setText(time);
+                timeView.setText(time);
 
                 if (startRun) {
                     seconds++;

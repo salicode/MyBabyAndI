@@ -78,22 +78,24 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int listPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
         String listTitle = (String) getGroup(listPosition);
-        String Timerlist = (String) getGroup(listPosition);
+        String Timerlist = (String) getGroup(listPosition );
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context.
                     getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.list_group, null);
         }
         TextView listTitleTextView = convertView.findViewById(R.id.listTitle);
-        //TextView mytimerView = convertView.findViewById(R.id.timeview);
-         //if (listPosition == 0) {
-           //  mytimerView.setTypeface(null, Typeface.BOLD);
+       // TextView mytimerView = convertView.findViewById(R.id.timeview);
+        //;
+         // {
+           //
             // mytimerView.setText(Timerlist);
          // else
              listTitleTextView.setTypeface(null, Typeface.BOLD);
              listTitleTextView.setText(listTitle);
-
-
+       //   if (listPosition == 0)
+         //     mytimerView.setTypeface(null, Typeface.BOLD);
+         //     mytimerView.setText(Timerlist);
             return convertView;
     }
 

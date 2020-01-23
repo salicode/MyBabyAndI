@@ -15,6 +15,15 @@
         android:paddingBottom="10dp"
         android:textColor="@android:color/black"
         tools:ignore="RtlSymmetry" />
+    <TextView
+        android:id="@+id/timeview"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@android:color/black"
+        tools:ignore="RtlSymmetry" />
 
 
 </LinearLayout>
