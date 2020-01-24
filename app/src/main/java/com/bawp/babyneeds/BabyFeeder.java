@@ -149,13 +149,29 @@ public class BabyFeeder extends AppCompatActivity {
                         //  onClickStart();
                        // createPopupDialog();
                         //startRun = true;
-                    } else if (groupPosition == 1 && childPosition == 0) {
-                    Intent intent = new Intent(BabyFeeder.this,Diat.class);
-                     startActivity(intent);
+                    } else if (groupPosition == 1 ) {
+                    if (childPosition == 0) {
+                        Intent intent = new Intent(BabyFeeder.this, Diat.class);
+                        startActivity(intent);
+                    } else if (childPosition == 1) {
+                      Intent intent = new Intent(BabyFeeder.this,BreastProduction.class);
+                      startActivity(intent);
+
+                    }
                 } else if (groupPosition == 2 && childPosition == 0 ){
                     createPopupDialog();
-                } else if (groupPosition == 3 && childPosition == 0 ){
-                    createPopupDialog();
+                } else if (groupPosition == 3){
+                    if (childPosition == 0) {
+                        createPopupDialog();
+                    } else if(childPosition == 1) {
+                        MyStart();
+                    }else if (childPosition == 2){
+                        MyStart();
+                    }else if(childPosition == 3){
+                        MyStop();
+                    }else if(childPosition == 4){
+                        MyResest();
+                    }
                 } else if (groupPosition == 4 && childPosition == 0 ){
                     Intent intent = new Intent(BabyFeeder.this,ListActivity.class);
                     startActivity(intent);

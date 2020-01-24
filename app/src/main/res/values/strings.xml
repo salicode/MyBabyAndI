@@ -17,4 +17,12 @@
     <string name="turnonalarm">Alarm on</string>
     <string name="turn_off_alarm">Alarm off</string>
     <string name="did_you_set_the_alarm">Did you set the Alarm</string>
+    <string name="BabysDetails">Baby\'s Detail</string>
+    <string name="baby_name">Baby name</string>
+    <string name="baby_birthday">Baby Birthday</string>
+    <string-array name="gender_array">
+        <item>Boy</item>
+        <item>Girl</item>
+    </string-array>
+    <string name="My_continue">Continue</string>
 </resources>

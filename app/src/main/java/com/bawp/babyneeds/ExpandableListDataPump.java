@@ -21,12 +21,17 @@ class ExpandableListDataPump {
 
         List<String> Diet = new ArrayList<>();
         Diet.add("Diet");
+        Diet.add("Increase Breast Milk production");
 
         List<String> Benefits = new ArrayList<>();
         Benefits.add(" Benefits");
 
         List<String> Pumping = new ArrayList<>();
         Pumping.add(" Pumping");
+        Pumping.add("Left");
+        Pumping.add("Right");
+        Pumping.add("Stop");
+        Pumping.add("Reset");
 
         List<String> Reminder = new ArrayList<>();
         Reminder.add("Reminder");

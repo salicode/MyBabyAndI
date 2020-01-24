@@ -4,20 +4,23 @@
     package="com.bawp.babyneeds">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MyAlarmActivity"></activity>
+        <activity android:name=".BreastProduction"></activity>
+        <activity android:name=".BabyFeeder" />
+        <activity android:name=".MyAlarmActivity" />
         <activity android:name=".Benefit" />
         <activity android:name=".Diat" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ListActivity" />
         <activity
-            android:name=".BabyFeeder"
+            android:name=".Login"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -26,9 +29,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".Alarm_Receiver"/>
-        <service android:name=".RingtonePlayingService"
-            android:enabled="true"/>
+
+        <receiver android:name=".Alarm_Receiver" />
+
+        <service
+            android:name=".RingtonePlayingService"
+            android:enabled="true" />
     </application>
 
 </manifest>
