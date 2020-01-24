@@ -12,8 +12,7 @@ public class BreastProduction extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breast_production);
-        setContentView(R.layout.activity_diat);
         pdfView= findViewById(R.id.yourpdfdt);
-        pdfView.fromAsset("FoodstoAvoid.pdf").load();
+        pdfView.fromAsset("BreastMilkProduction.pdf").load();
     }
 }
