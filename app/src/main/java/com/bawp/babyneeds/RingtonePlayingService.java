@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class RingtonePlayingService extends Service {
     MediaPlayer mediaPlayer;
-    int start_Id;
+    int startId;
     boolean isRunning;
 
     @Nullable
@@ -27,34 +27,34 @@ public class RingtonePlayingService extends Service {
         String state = Objects.requireNonNull(intent.getExtras()).getString("extra");
         assert state != null;
         Log.e("Ringtone State :", state);
-        if (state.equals("alarm on")) {
-            start_Id = 1;
-        } else if (state.equals("alarm off")) {
-            start_Id = 0;
+        if (state.equals("Alarm on")) {
+            startId = 1;
+        } else if (state.equals("Alarm off")) {
+            startId = 0;
         } else {
-            start_Id = 0;
+            startId = 0;
         }
 
         if (!this.isRunning && startId == 1) {
             mediaPlayer = MediaPlayer.create(this, R.raw.myalarm);
             mediaPlayer.start();
             this.isRunning = true;
-            this.start_Id = 0;
+            this.startId = 0;
 
         } else if (this.isRunning && startId == 0) {
             mediaPlayer.stop();
             mediaPlayer.reset();
             this.isRunning = false;
-            this.start_Id = 0;
+            this.startId = 0;
 
         } else if (!this.isRunning && startId == 0) {
             this.isRunning = false;
-            this.start_Id = 0;
+            this.startId = 0;
 
 
         } else if (this.isRunning && startId == 1) {
             this.isRunning = true;
-            this.start_Id = 1;
+            this.startId = 1;
 
         }
 
