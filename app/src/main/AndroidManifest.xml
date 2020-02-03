@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".BreastProduction"></activity>
+        <activity android:name=".BestFood"></activity>
+        <activity android:name=".BreastProduction" />
         <activity android:name=".BabyFeeder" />
         <activity android:name=".MyAlarmActivity" />
         <activity android:name=".Benefit" />

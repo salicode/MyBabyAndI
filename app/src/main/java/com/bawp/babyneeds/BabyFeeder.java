@@ -44,8 +44,6 @@ public class BabyFeeder extends AppCompatActivity {
     private DatabaseHandler databaseHandler;
     DatePickerDialog picker;
 
-
-
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
@@ -56,27 +54,8 @@ public class BabyFeeder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baby_feeder);
-
-
        // babyItem = findViewById(R.id.babyItem);
         //itemQuantity =findViewById(R.id.itemQuantity);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         databaseHandler = new DatabaseHandler(this);
 
        // byPassActivity();
@@ -141,14 +120,6 @@ public class BabyFeeder extends AppCompatActivity {
                     }
 
 
-                    //
-                        //   MyStop();
-                        //createPopupDialog();
-                        //Intent intent = new Intent(BabyFeeder.this,Diat.class);
-                       // startActivity(intent);
-                        //  onClickStart();
-                       // createPopupDialog();
-                        //startRun = true;
                     } else if (groupPosition == 1 ) {
                     if (childPosition == 0) {
                         Intent intent = new Intent(BabyFeeder.this, Diat.class);
@@ -157,6 +128,9 @@ public class BabyFeeder extends AppCompatActivity {
                       Intent intent = new Intent(BabyFeeder.this,BreastProduction.class);
                       startActivity(intent);
 
+                    } else if(childPosition == 2){
+                      Intent intent = new Intent(BabyFeeder.this,BestFood.class);
+                      startActivity(intent);
                     }
                 } else if (groupPosition == 2 && childPosition == 0 ){
                     createPopupDialog();

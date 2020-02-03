@@ -2,14 +2,18 @@
   <dictionary name="salisu">
     <words>
       <w>babyneeds</w>
+      <w>cldr</w>
+      <w>diat</w>
       <w>foodsto</w>
       <w>mcurrent</w>
+      <w>mybest</w>
       <w>mybutton</w>
       <w>mypdfbne</w>
       <w>mypdfdt</w>
       <w>mypicker</w>
       <w>mytimer</w>
       <w>myupdatetxt</w>
+      <w>resest</w>
       <w>timerlist</w>
       <w>timeview</w>
       <w>turnonalarm</w>

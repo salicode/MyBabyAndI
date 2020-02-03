@@ -1,0 +1,18 @@
+package com.bawp.babyneeds;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+import com.github.barteksc.pdfviewer.PDFView;
+
+public class BestFood extends AppCompatActivity {
+    PDFView pdfView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_best_food);
+        pdfView =findViewById(R.id.mybestFoods);
+        pdfView.fromAsset("Best foods to increase breast milk production.pdf").load();
+    }
+}
