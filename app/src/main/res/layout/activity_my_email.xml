@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MyEmail">
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_your_feedback1_here"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="30sp"
+        tools:ignore="ObsoleteLayoutParam,PrivateResource" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_baby_and_i"
+        android:textColor="@color/cardview_dark_background"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        tools:ignore="PrivateResource" />
+
+
+
+    <Button
+        android:id="@+id/sendEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/compose_email"/>
+
+</LinearLayout>
