@@ -113,12 +113,12 @@ public class BabyFeeder extends AppCompatActivity {
 
                 Timer();
                 if (groupPosition == 0) {
-                    if (childPosition == 0 || childPosition == 1) {
+                    if (childPosition == 0 ) {
                        // onMyStart();
                         MyStart();
-                    } else if (childPosition == 2) {
+                    } else if (childPosition == 1) {
                         MyStop();
-                    } else if (childPosition == 3) {
+                    } else if (childPosition == 2) {
                         MyResest();
                     }
 
