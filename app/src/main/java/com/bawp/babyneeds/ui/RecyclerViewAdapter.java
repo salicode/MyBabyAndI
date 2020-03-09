@@ -53,6 +53,10 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
         viewHolder.quantity.setText(MessageFormat.format("Time: {0}", String.valueOf(item.getItemQuantity())));
         viewHolder.size.setText(MessageFormat.format("Volume: {0}", String.valueOf(item.getItemSize())));
         viewHolder.dateAdded.setText(MessageFormat.format("Added on: {0}", item.getDateItemAdded()));
+        viewHolder.itemName.setText(MessageFormat.format("Date: {0}",item.getItemName()));
+        viewHolder.quantity.setText(MessageFormat.format("Weight: {0}",String.valueOf(item.getItemQuantity())));
+        viewHolder.size.setText(MessageFormat.format("Height: {0}",String.valueOf(item.getItemSize())));
+        //viewHolder.counter.setText(MessageFormat.format("Breast: {0}",item.Timer());
 
 
     }
@@ -68,6 +72,7 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
         public TextView quantity;
         public TextView size;
         public TextView dateAdded;
+        public TextView counter;
         public Button editButton;
         public Button deleteButton;
 
@@ -82,6 +87,7 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
             quantity = itemView.findViewById(R.id.item_quantity);
             size = itemView.findViewById(R.id.item_size);
             dateAdded = itemView.findViewById(R.id.item_date);
+            counter=itemView.findViewById(R.id.timeview);
 
             editButton = itemView.findViewById(R.id.editButton);
             deleteButton = itemView.findViewById(R.id.deleteButton);
@@ -158,6 +164,7 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
             final EditText itemQuantity;
             final EditText itemColor;
             final EditText itemSize;
+            final EditText counter;
             TextView title;
 
             babyItem = view.findViewById(R.id.babyItem);
@@ -165,6 +172,7 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
             itemColor = view.findViewById(R.id.itemColor);
             itemSize = view.findViewById(R.id.itemSize);
             saveButton = view.findViewById(R.id.saveButton);
+            //counter = view.findViewById(R.id.timeview);
             saveButton.setText(R.string.update_text);
             title = view.findViewById(R.id.title);
 
@@ -173,6 +181,10 @@ public class RecyclerViewAdapter extends Adapter<RecyclerViewAdapter.ViewHolder>
             itemQuantity.setText(String.valueOf(newItem.getItemQuantity()));
             itemColor.setText(newItem.getItemColor());
             itemSize.setText(String.valueOf(newItem.getItemSize()));
+            //String time = String.format(  "LEFT:  %d:%02d:%02d", hours, minutes, secs);
+
+            //counter.setText(time);
+
 
 
             builder.setView(view);

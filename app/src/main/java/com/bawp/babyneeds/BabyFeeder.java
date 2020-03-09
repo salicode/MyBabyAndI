@@ -39,6 +39,9 @@ public class BabyFeeder extends AppCompatActivity {
     private EditText itemQuantity;
     private EditText itemColor;
     private EditText itemSize;
+    private EditText babyItemnew;
+    private EditText itemQuantitynew;
+    private EditText itemSizenew;
     private int seconds = 0;
     private boolean startRun;
     private DatabaseHandler databaseHandler;
@@ -133,17 +136,17 @@ public class BabyFeeder extends AppCompatActivity {
                       startActivity(intent);
                     }
                 } else if (groupPosition == 2 && childPosition == 0 ){
-                    createPopupDialog();
+                    //createPopupDialog();
+                    createPopupDialognew();
                 } else if (groupPosition == 3){
                     if (childPosition == 0) {
                         createPopupDialog();
+
                     } else if(childPosition == 1) {
                         MyStart();
-                    }else if (childPosition == 2){
-                        MyStart();
-                    }else if(childPosition == 3){
+                    }else if(childPosition == 2){
                         MyStop();
-                    }else if(childPosition == 4){
+                    }else if(childPosition == 3){
                         MyResest();
                     }
                 } else if (groupPosition == 4 && childPosition == 0 ){
@@ -171,11 +174,17 @@ public class BabyFeeder extends AppCompatActivity {
         String newColor = itemColor.getText().toString().trim();
         String  quantity = itemQuantity.getText().toString().trim();
         String size = itemSize.getText().toString().trim();
+        String newItemone = babyItemnew.getText().toString().trim();
+        String sizeone = itemSizenew.getText().toString().trim();
+        String  quantityone = itemQuantitynew.getText().toString().trim();
 
         item.setItemName(newItem);
         item.setItemColor(newColor);
         item.setItemQuantity(quantity);
         item.setItemSize(size);
+        item.setItemName(newItemone);
+        item.setItemQuantity(quantityone);
+        item.setItemSize(sizeone);
 
         databaseHandler.addItem(item);
 
@@ -214,7 +223,7 @@ public class BabyFeeder extends AppCompatActivity {
         seconds = 0;
     }
 
-    private void Timer() {
+    public void Timer() {
         final TextView timeView = findViewById(R.id.timeview);
         final Handler handler = new Handler();
         handler.post(new Runnable() {
@@ -224,7 +233,7 @@ public class BabyFeeder extends AppCompatActivity {
                 int minutes = (seconds % 3600) / 60;
                 int secs = seconds % 60;
 
-                @SuppressLint("DefaultLocale") String time = String.format(  "LEFT:  %d:%02d:%02d", hours, minutes, secs);
+                @SuppressLint("DefaultLocale") String time = String.format(  "Breast Feeding:  %d:%02d:%02d", hours, minutes, secs);
 
                 timeView.setText(time);
 
@@ -291,6 +300,85 @@ public class BabyFeeder extends AppCompatActivity {
 
             }
         });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!babyItem.getText().toString().isEmpty()
+                        && !itemColor.getText().toString().isEmpty()
+                        && !itemQuantity.getText().toString().isEmpty()
+                        && !itemSize.getText().toString().isEmpty()) {
+                    saveItem(v);
+                }else {
+                    Snackbar.make(v, "Empty Fields not Allowed", Snackbar.LENGTH_SHORT)
+                            .show();
+                }
+
+            }
+        });
+
+        builder.setView(view);
+        dialog = builder.create();// creating our dialog object
+        dialog.show();// important step!
+
+
+
+    }
+    private void createPopupDialognew() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        @SuppressLint("InflateParams") View view = getLayoutInflater().inflate(R.layout.popupnew, null);
+
+        babyItem= view.findViewById(R.id.babyItemnew);
+        itemQuantity = view.findViewById(R.id.itemQuantitynew);
+       // itemColor = view.findViewById(R.id.itemColor);
+        itemSize = view.findViewById(R.id.itemSizenew);
+        Button saveButton = view.findViewById(R.id.saveButton);
+
+        babyItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                // date picker dialog
+                picker = new DatePickerDialog(BabyFeeder.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @SuppressLint("SetTextI18n")
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                babyItem.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                            }
+                        }, year, month, day);
+                picker.show();
+            }
+        });
+
+//        itemQuantity.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//
+//                Calendar mcurrentTime = Calendar.getInstance();
+//                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+//                int minute = mcurrentTime.get(Calendar.MINUTE);
+//
+//                TimePickerDialog mTimePicker;
+//                mTimePicker = new TimePickerDialog(BabyFeeder.this, new TimePickerDialog.OnTimeSetListener() {
+//                    @SuppressLint("SetTextI18n")
+//                    @Override
+//                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+//                        itemQuantity.setText( selectedHour + ":" + selectedMinute);
+//                    }
+//                }, hour, minute, true);
+//                mTimePicker.setTitle("Select Time");
+//                mTimePicker.show();
+//
+//            }
+//        });
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override

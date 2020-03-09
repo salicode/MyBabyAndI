@@ -9,8 +9,8 @@ class ExpandableListDataPump {
         HashMap<String, List<String>> expandableListDetail = new HashMap<>();
 
         List<String> BreastFeeding = new ArrayList<>();
-        BreastFeeding.add("LEFT");
-        BreastFeeding.add("RIGHT");
+        BreastFeeding.add("Breast Feeding");
+        //BreastFeeding.add("RIGHT");
         BreastFeeding.add("Stop");
         BreastFeeding.add("Reset");
 
@@ -29,8 +29,8 @@ class ExpandableListDataPump {
 
         List<String> Pumping = new ArrayList<>();
         Pumping.add(" Pumping");
-        Pumping.add("Left");
-        Pumping.add("Right");
+        Pumping.add("Breast Feeding");
+       // Pumping.add("Right");
         Pumping.add("Stop");
         Pumping.add("Reset");
 

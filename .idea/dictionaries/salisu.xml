@@ -4,8 +4,12 @@
       <w>babyneeds</w>
       <w>babys</w>
       <w>cldr</w>
+      <w>dialognew</w>
       <w>diat</w>
       <w>foodsto</w>
+      <w>itemnew</w>
+      <w>itemone</w>
+      <w>layoutnew</w>
       <w>mcurrent</w>
       <w>mybest</w>
       <w>mybutton</w>
@@ -14,7 +18,11 @@
       <w>mypicker</w>
       <w>mytimer</w>
       <w>myupdatetxt</w>
+      <w>quantitynew</w>
+      <w>quantityone</w>
       <w>resest</w>
+      <w>sizenew</w>
+      <w>sizeone</w>
       <w>timerlist</w>
       <w>timeview</w>
       <w>turnonalarm</w>

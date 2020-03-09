@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_id"
+    android:id="@+id/layoutnew_id"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.v7.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -19,12 +20,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-               android:text="@string/feeding_item"
+                android:text="@string/growth_item"
                 android:textSize="18sp"
                 android:textStyle="italic" />
 
             <EditText
-                android:id="@+id/babyItem"
+                android:id="@+id/babyItemnew"
                 android:layout_below="@id/title"
                 android:layout_width="match_parent"
                 android:inputType="date"
@@ -33,33 +34,27 @@
                 android:importantForAutofill="no" />
 
             <EditText
-                android:id="@+id/itemQuantity"
-                android:inputType="time"
-                android:layout_below="@id/babyItem"
+                android:id="@+id/itemQuantitynew"
+                android:inputType="number"
+                android:layout_below="@id/babyItemnew"
                 android:layout_width="match_parent"
-                android:hint="@string/hint_time"
+                android:hint="@string/hint_weight"
                 android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/itemColor"
-                android:layout_below="@id/itemQuantity"
-                android:layout_width="match_parent"
-                android:hint="@string/hint_note"
-                android:layout_height="wrap_content"
-                android:importantForAutofill="no" />
+
 
             <EditText
-                android:id="@+id/itemSize"
-                android:layout_below="@id/itemColor"
+                android:id="@+id/itemSizenew"
+                android:layout_below="@id/itemQuantitynew"
                 android:inputType="number"
                 android:layout_width="match_parent"
-                android:hint="@string/hint_volume"
+                android:hint="@string/hint_HIEGHT"
                 android:layout_height="wrap_content"
                 android:importantForAutofill="no" />
 
             <Button
                 android:id="@+id/saveButton"
-                android:layout_below="@id/itemSize"
+                android:layout_below="@id/itemSizenew"
                 android:layout_marginEnd="5dp"
                 android:textSize="14sp"
                 android:textStyle="bold"
